@@ -22,7 +22,7 @@ func uptime() string {
 		return ""
 	}
 
-	// Convert the seconds returned by in.Uptime to hours, miuntes, and seconds
+	// Convert the seconds returned by in.Uptime to hours, minutes, and seconds
 	h := in.Uptime / 3600 % 24
 	m := in.Uptime / 60 % 60
 	s := in.Uptime % 60
