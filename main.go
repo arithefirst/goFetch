@@ -23,7 +23,7 @@ func main() {
 	// Drives/Storage
 	fmt.Println(bold("   Drives:"))
 	for _, drive := range si.Storage {
-		fmt.Printf("    ╰─%v %v ", bold(drive.Name+":"), drive.Model)
+		fmt.Printf("    ╰─%v %v (%vGB)", bold(drive.Name+":"), drive.Model, drive.Size)
 		fmt.Println()
 	}
 
