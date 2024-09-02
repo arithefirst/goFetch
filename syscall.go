@@ -27,6 +27,6 @@ func uptime() string {
 	m := in.Uptime / 60 % 60
 	s := in.Uptime % 60
 
-	uptime := fmt.Sprintf("%vh %vm %vs", h, m, s)
-	return uptime
+	uptimeSeconds := fmt.Sprintf("%vh %vm %vs", h, m, s)
+	return uptimeSeconds
 }
