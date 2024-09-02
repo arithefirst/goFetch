@@ -18,22 +18,22 @@ func main() {
 	osReply(si)
 
 	// CPU
-	fmt.Printf("%v %v\n", bold("CPU:"), si.CPU.Model)
+	fmt.Printf("   %v %v\n", bold("CPU:"), si.CPU.Model)
 
 	// Drives/Storage
-	fmt.Println(bold("Drives:"))
+	fmt.Println(bold("   Drives:"))
 	for _, drive := range si.Storage {
-		fmt.Printf(" ╰─%v %v ", bold(drive.Name+":"), drive.Model)
+		fmt.Printf("    ╰─%v %v ", bold(drive.Name+":"), drive.Model)
 		fmt.Println()
 	}
 
 	// Kernel
-	fmt.Printf("%v %v\n", bold("Kernel:"), si.Kernel.Release)
+	fmt.Printf("   %v %v\n", bold("Kernel:"), si.Kernel.Release)
 
 	// Memory
-	fmt.Printf("%v %vMiB\n", bold("Memory:"), memInstalled()/1024/1024)
+	fmt.Printf("   %v %vMiB\n", bold("Memory:"), memInstalled()/1024/1024)
 
 	//	Uptime
-	fmt.Printf("%v %v\n", bold("Uptime:"), uptime())
+	fmt.Printf("   %v %v\n", bold("Uptime:"), uptime())
 
 }
