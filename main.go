@@ -14,26 +14,26 @@ func main() {
 	var si sysinfo.SysInfo
 	si.GetSysInfo()
 
-	// Get the logo and title for the OS
-	osReply(si)
+	// Get the logo and title for the OS, and save the OS color esc
+	esc := osReply(si)
 
 	// CPU
-	fmt.Printf("   %v %v\n", bold("CPU:"), si.CPU.Model)
+	fmt.Printf("   %v %v\n", bold(fmt.Sprintf("%vCPU:", esc)), si.CPU.Model)
 
 	// Drives/Storage
-	fmt.Println(bold("   Drives:"))
+	fmt.Println(bold(fmt.Sprintf("%v   Drives:", esc)))
 	for _, drive := range si.Storage {
 		fmt.Printf("    ╰─%v %v (%vGB)", bold(drive.Name+":"), drive.Model, drive.Size)
 		fmt.Println()
 	}
 
 	// Kernel
-	fmt.Printf("   %v %v\n", bold("Kernel:"), si.Kernel.Release)
+	fmt.Printf("   %v %v\n", bold(fmt.Sprintf("%vKernel:", esc)), si.Kernel.Release)
 
 	// Memory
-	fmt.Printf("   %v %vMiB\n", bold("Memory:"), memInstalled()/1024/1024)
+	fmt.Printf("   %v %vMiB\n", bold(fmt.Sprintf("%vMemory:", esc)), memInstalled()/1024/1024)
 
 	//	Uptime
-	fmt.Printf("   %v %v\n", bold("Uptime:"), uptime())
+	fmt.Printf("   %v %v\n", bold(fmt.Sprintf("%vUptime:", esc)), uptime())
 
 }
