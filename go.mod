@@ -1,4 +1,4 @@
-module gofetch
+module github.com/arithefirst/goFetch
 
 go 1.23.0
 
