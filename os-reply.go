@@ -7,7 +7,7 @@ import (
 
 func osReply(si sysinfo.SysInfo) string {
 	si.GetSysInfo()
-	switch "ubuntu" {
+	switch si.OS.Vendor {
 	case "arch":
 		fmt.Println("   \u001B[38;2;85;205;253m              ~~              ")
 		fmt.Println("   \u001B[38;2;85;205;253m             :fjI                 █████╗ ██████╗  ██████╗██╗  ██╗ ")
